@@ -15,32 +15,67 @@
     <meta charset="UTF-8">
     <title>수강 내역</title>
     <style>
-      table {
-        width: 80%;
-        border-collapse: collapse;
-        margin: 30px auto;
-      }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 40px 20px;
+        }
 
-      th, td {
-        border: 1px solid black;
-        padding: 10px;
-        text-align: center;
-      }
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
 
-      th {
-        background-color: #81c147;
-        color: white;
-      }
+        table {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+        }
 
-      .summary {
-        background-color: yellow;
-        font-weight: bold;
-      }
+        thead {
+            background-color: #409eff;
+            color: white;
+        }
+
+        th, td {
+            padding: 16px;
+            text-align: center;
+            border-bottom: 1px solid #eaecef;
+            font-size: 15px;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        a {
+            color: #409eff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #2c8be6;
+        }
+
+        .summary {
+            background-color: #f1f3f5;
+            font-weight: bold;
+            color: #2c3e50;
+        }
     </style>
 </head>
 <body>
 
-<h2 style="text-align:center;">수강 내역</h2>
+<h2>수강 내역</h2>
 
 <table>
     <thead>
@@ -86,3 +121,4 @@
 
 </body>
 </html>
+

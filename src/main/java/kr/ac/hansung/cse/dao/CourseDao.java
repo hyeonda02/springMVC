@@ -21,7 +21,11 @@ public class CourseDao {
 
     public Map<YearSemester, List<Course>> getCoursesGroupedByYearSemester() {
         List<Course> courses = entityManager
-                .createQuery("SELECT c FROM Course c ORDER BY c.year, c.semester", Course.class)
+                .createQuery(
+                        "SELECT c FROM Course c " +
+                                "WHERE NOT (c.year = 2025 AND c.semester = 2) " +
+                                "ORDER BY c.year, c.semester",
+                        Course.class)
                 .getResultList();
 
         Map<YearSemester, List<Course>> courseMap = new LinkedHashMap<>();

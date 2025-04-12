@@ -11,117 +11,125 @@
     <title>학사 정보 시스템</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #e6f1f7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #f8fbff, #e2ebf0);
             margin: 0;
             padding: 0;
-            text-align: center;
         }
 
         .header {
-            background-color: yellow;
-            padding: 20px;
+            background-color: #409eff;
+            color: white;
+            padding: 20px 40px;
             font-size: 28px;
             font-weight: bold;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-left: 40px;
-            padding-right: 40px;
         }
 
         .login-btn {
-            background-color: #ffe599;
-            border: none;
+            background-color: #ffffff;
+            color: #409eff;
+            border: 2px solid #ffffff;
             padding: 10px 20px;
             font-size: 16px;
+            border-radius: 5px;
             cursor: pointer;
             font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background-color: #ffffff;
+            color: #2c8be6;
         }
 
         .container {
             display: flex;
             justify-content: center;
             margin-top: 60px;
-            gap: 30px;
+            gap: 40px;
+            flex-wrap: wrap;
         }
 
         .card {
-            background-color: white;
-            width: 250px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            width: 260px;
+            padding: 30px 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
         }
 
-        .card img {
-            width: 100%;
-            height: 120px;
-            object-fit: contain;
+        .card:hover {
+            transform: translateY(-5px);
         }
 
         .card-title {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
-            margin-top: 15px;
+            color: #2c3e50;
+            margin-bottom: 10px;
         }
 
         .card-desc {
-            font-size: 12px;
-            color: gray;
+            font-size: 14px;
+            color: #666;
             margin-top: 10px;
-            height: 50px;
+            min-height: 50px;
         }
 
         .submit-btn {
-            margin-top: 15px;
-            padding: 8px 20px;
-            background-color: purple;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #409eff;
             color: white;
             border: none;
-            border-radius: 20px;
+            border-radius: 30px;
             cursor: pointer;
             font-weight: bold;
-        }
-
-        a.submit-btn {
             text-decoration: none;
             display: inline-block;
+            transition: background-color 0.3s ease;
         }
+
+        .submit-btn:hover {
+            background-color: #2c8be6;
+        }
+
     </style>
 </head>
 <body>
 
 <div class="header">
     <div>학사 정보 시스템</div>
-    <button class="login-btn">login</button>
+    <button class="login-btn">Login</button>
 </div>
 
 <div class="container">
     <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/2922/2922506.png" alt="icon1">
         <div class="card-title">학년별 이수 학점 조회</div>
-        <div class="card-desc">학년별로 이수한 학점을 확인할 수 있는 기능입니다.</div>
-        <a href="<%= request.getContextPath() %>/courses" class="submit-btn">submit</a>
-
+        <div class="card-desc">학년별로 이수한 학점을 확인할 수 있습니다.</div>
+        <a href="<%= request.getContextPath() %>/courses" class="submit-btn">확인하기</a>
     </div>
 
     <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/2942/2942701.png" alt="icon2">
         <div class="card-title">수강 신청하기</div>
-        <div class="card-desc">원하는 과목을 선택하여 수강 신청을 할 수 있습니다.</div>
-        <a href="<%= request.getContextPath() %>/courses/create" class="submit-btn">submit</a>
-
+        <div class="card-desc">과목 정보를 입력하여 수강 신청을 할 수 있습니다.</div>
+        <a href="<%= request.getContextPath() %>/courses/create" class="submit-btn">신청하기</a>
     </div>
 
     <div class="card">
-        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="icon3">
         <div class="card-title">수강 신청 조회</div>
-        <div class="card-desc">내가 신청한 과목의 상태를 조회할 수 있습니다.</div>
-        <a href="<%= request.getContextPath() %>/courses/nextcourse" class="submit-btn">submit</a>
+        <div class="card-desc">2025년 2학기 수강신청 내역을 확인할 수 있습니다.</div>
+        <a href="<%= request.getContextPath() %>/courses/nextcourse" class="submit-btn">조회하기</a>
     </div>
 </div>
 
 </body>
 </html>
+
+
 

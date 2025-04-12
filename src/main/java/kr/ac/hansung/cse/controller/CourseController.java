@@ -54,8 +54,16 @@ public class CourseController {
 
     }
     @GetMapping("/nextcourse")
-    public String cnextCourses(HttpServletRequest request) {
-        return "nextcourse";
+    public String listCourses(Model model) {
+        int year = 2025;
+        int semester = 2;
+        List<Course> courses = service.getCoursesByYearAndSemester(year, semester);
 
+        model.addAttribute("courses", courses);
+        model.addAttribute("year", year);
+        model.addAttribute("semester", semester);
+
+        return "nextcourse";
     }
+
 }
